@@ -15,55 +15,10 @@ const quotes=["Look at usual things with unusual eyes. ~ Vico Magistetti","Any c
 
 const bg=document.getElementById("text");
 const btn=document.getElementById("new-quote");
-//const author=document.getElementsById("author");
 const fa=document.querySelectorAll(".fa");//all elements with this class will be considered
-//const fa=document.querySelector(".fa");//only one i.e.left double quote willconsider
 const x=document.getElementById("tweet-quote");
 
-/*
-function randomQuotes(){
-	const newQuote= randomGenerator(quotes);
-	const newBg= getRandomColour();
-	console.log(newBg,hex[newBg]);
-	const text=quotes[newQuote].split("~");//randomly generated text from array split into quotes=text[0] and author=text[1].
-	document.body.style.backgroundColor=newBg;
-	//bg.innerHTML=quotes[newQuote];
-	bg.innerHTML=text[0];
-	bg.style.color=newBg;
-	btn.style.backgroundColor=newBg;
-	author.textContent="~ "+text[1];
-	author.style.color=newBg;
-	//fa.style.color=newBg; works only for 1 element/left quote i.e. querySelector("") 
-	
-	/* In your code, you're using querySelectorAll to select elements with the class ".fa," 
-	but this method returns a NodeList, not a single element. To set the color property on multiple elements, 
-	you need to loop through the NodeList and set the property on each element individually. */
-/*	fa.forEach(function(element){
-		element.style.color=newBg;
 
-	});
-	x.style.backgroundColor=newBg;
-
-
-}
-
-function randomGenerator(arr){
-	return Math.floor(Math.random()*arr.length);
-
-}
-
-function getRandomColour(){
-    let temp='#'
-    for(let i=0;i<6;i++){
-        temp=temp+hex[Math.floor(Math.random()*16)];
-    }
-    //console.log(temp,"yes");
-    return temp;
-}
-
-
-btn.addEventListener("click",randomQuotes);
-*/
 
 
 btn.addEventListener("click",function () {
@@ -85,33 +40,6 @@ btn.addEventListener("click",function () {
 	
 	x.style.backgroundColor=newBg;
 
-	//fa.style.color=newBg;
-     
-     /**/
-	/*
-	const newQuote= randomGenerator(quotes);
-	const newBg= getRandomColour();
-	console.log(newBg,hex[newBg]);
-	const text=quotes[newQuote].split("~");//randomly generated text from array split into quotes=text[0] and author=text[1].
-	document.body.style.backgroundColor=newBg;
-	//bg.innerHTML=quotes[newQuote];
-	bg.innerHTML=text[0];
-	bg.style.color=newBg;
-	btn.style.backgroundColor=newBg;
-	author.textContent="~ "+text[1];
-	author.style.color=newBg;
-	//fa.style.color=newBg; works only for 1 element/left quote i.e. querySelector("") 
-	
-	/* In your code, you're using querySelectorAll to select elements with the class ".fa," 
-	but this method returns a NodeList, not a single element. To set the color property on multiple elements, 
-	you need to loop through the NodeList and set the property on each element individually. */
-/*	fa.forEach(function(element){
-		element.style.color=newBg;
-
-	});
-	x.style.backgroundColor=newBg;*/
-
-
 });
 
 
@@ -127,6 +55,5 @@ function getRandomColour(){
     for(let i=0;i<6;i++){
         temp=temp+hex[Math.floor(Math.random()*16)];
     }
-    //console.log(temp,"yes");
     return temp;
 }
