@@ -1,59 +1,61 @@
-
-
-
-
-const hex="0123456789ABCDEF";
-const quotes=["Look at usual things with unusual eyes. ~ Vico Magistetti","Any code of your own that you haven't looked at for six or more months might as well have been written by someone else. ~ Eagleson's Law","Tell me and I forget. Teach me and I remember. Involve me and I learn. ~ Benjamin Franklin","Success often comes to those who have the aptitude to see way down the road. ~ Laing Burns, Jr",
-	"I rate enthusiasm even above professional skill. ~ Edward Appleton",
-	"There's no limit to what a man can achieve, if he doesn't care who gets the credit. ~ Laing Burns, Jr",
-	"The world at large does not judge us by who we are and what we know; it judges us by what we have. ~ Joyce Brothers",
-	"Imagination is everything. It is the preview of life's coming attractions. ~ Albert Einstein",
-	"To have faith is to trust yourself to the water. When you swim you don't grab hold of the water, because if you do you will sink and drown. Instead you relax, and float. ~ Alan Watts",
-	"Everything is in a state of flux, and this includes the world of chess. ~ Mikhail Botvinnik",
-	"Real knowledge is to know the extent of one's ignorance. ~ Confucius",
-	"We cannot solve our problems with the same thinking we used when we created them. ~ Albert Einstein"];
-
-const bg=document.getElementById("text");
-const btn=document.getElementById("new-quote");
-const fa=document.querySelectorAll(".fa");//all elements with this class will be considered
-const x=document.getElementById("tweet-quote");
-
-
-
-
-btn.addEventListener("click",function () {
-	const newQuote= randomGenerator(quotes);
-	const newBg= getRandomColour();
-	console.log(newBg,hex[newBg]);
-	const text=quotes[newQuote].split("~");//randomly generated text from array split into quotes=text[0] and author=text[1].
-	document.body.style.backgroundColor=newBg;
-	//bg.innerHTML=quotes[newQuote];
-	bg.innerHTML=text[0];
-	bg.style.color=newBg;
-	btn.style.backgroundColor=newBg;
-	author.textContent="~ "+text[1];
-	author.style.color=newBg;
-	fa.forEach(function(element){
-		element.style.color=newBg;
-
-	});
 	
-	x.style.backgroundColor=newBg;
+	<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Random Quote Machine</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="styles.css">
+            <link rel="icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" type="image/icon type">
+            <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+            
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-});
+        </head>
+        <body>
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+           
 
+            <main id="main">
 
+                    <div class="container" id="quote-box">
 
+                        <blockquote class="content-box">
+                            <h3 class="quote-text">
+                            <!--<i class="fas">&#8220;</i>-->
+                            <i class="fa fa-quote-left"></i> <span class="color" id="text">  Lost time is never found again </span>
+                            <i class="fa fa-quote-right"></i> 
+                            </h3>
+                            <h4 class="author_head"><span class="" id="author"> ~ Laing Burns, Jr </span>
+                            </h4>
+                            </p>
+                        </blockquote>
+                        <div class="link-box">
+                            <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" id="tweet-quote" class="tweet">
+                                <i class="fa-brands fa-x-twitter pics"></i>
+                                <!--
+                                <svg class="pics" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <!--<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" /></svg>-->
+                            </a>
+                        <button class="btn btn-hero" id="new-quote">New Quote</button>
+                        </div>
 
-function randomGenerator(arr){
-	return Math.floor(Math.random()*arr.length);
+                    </div>
 
-}
-
-function getRandomColour(){
-    let temp='#'
-    for(let i=0;i<6;i++){
-        temp=temp+hex[Math.floor(Math.random()*16)];
-    }
-    return temp;
-}
+                    
+                    
+            </main>
+             <footer>
+                        <p id="footr">Challenge by <a href="https://codepen.io/kudos2Shef/pen/LYMQpOB" class="footr_a"> freeCodeCamp </a>. Coded by <a href="https://www.frontendmentor.io/profile/kudos2Shef" class="footr_a">kudos2shef</a>.</p>
+                    </footer>
+            <!--javascript-->
+            <script src="app.js" async defer></script>
+        </body>
+    </html>
